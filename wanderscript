@@ -1,0 +1,17 @@
+_G.CanWander = true
+
+while wait(math.random(2, 6)) do
+    if _G.CanWander == true then
+        local player = game.Players.LocalPlayer
+        if player.Character then
+            local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
+            local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
+            if humanoid and humanoidRootPart then
+                local randomX = math.random(-15, 15)
+                local randomZ = math.random(-15, 15)
+                local newPosition = humanoidRootPart.Position + Vector3.new(randomX, 0, randomZ)
+                humanoid:MoveTo(newPosition)
+            end
+        end
+    end
+end
